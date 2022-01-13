@@ -28,3 +28,10 @@ Route::get('/dogs', function(){
     return response()->json($dogs,200);
     
 });
+
+Route::delete('/dogs', function(){
+     
+});
+
+Route::delete('/dogs/{dog}', 'DogController@destroy')
+  ->name('dogs.destroy');
