@@ -10,7 +10,7 @@ class DogFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
-            'image' => $this->faker->url('https://loremflickr.com/320/240/dog')
+            'image' => $this->faker->url('https://loremflickr.com/320/240/dog'),
         ];
     }
 }

@@ -25,4 +25,15 @@ class DogApiTest extends TestCase
             ->assertJsonCount(2)
             ->assertExactJson($dogs->toArray());
     }
+
+    public function test_api_dogs_show()
+    {   //Given
+        $dogs = Dog::factory()->count(2)->show();
+        //When
+        $response = $this->json('GET', '/api/dogs/{id}');
+        //Then
+        $response->assertStatus(200)
+            ->assertJsonCount(2)
+            ->assertExactJson($dogs->toArray());
+    }
 }
