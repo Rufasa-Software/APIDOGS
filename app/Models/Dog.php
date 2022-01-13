@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Dog extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'name',
+        'image',
+    ];
 }
