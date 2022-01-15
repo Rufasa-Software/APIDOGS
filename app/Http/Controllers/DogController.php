@@ -14,7 +14,9 @@ class DogController extends Controller
      */
     public function index()
     {
-        //
+        $dogs = Dog::all();
+        dd($dogs);
+        return response()->json($dogs, 200);
     }
 
     /**
@@ -78,10 +80,8 @@ class DogController extends Controller
      * @param  \App\Models\Dog  $dog
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Dog $dog)
-    {
-        //public function destroy(Dog $id){
-        $dog->delete();
-        return redirect('/')->with('success', 'Dog deleted');
+    public function destroy($id){
+        return Dog::destroy($id);
+        
     }
 }

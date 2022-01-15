@@ -13,4 +13,5 @@ class Dog extends Model
         'name',
         'image',
     ];
+
 }

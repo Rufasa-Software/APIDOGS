@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Dog;
+use App\Http\Controllers\DogController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,19 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/dogs', function(){
-    echo 'api';
-});
+Route::get('/dogs', [DogController::class, 'index']);
 
-Route::get('/dogs', function(){
-    $dogs = Dog::all();
-    return response()->json($dogs,200);
-    
-});
 
-Route::delete('/dogs', function(){
-     
-});
+Route::delete('/dogs/{id}', [Dogcontroller::class, 'destroy']);
 
-Route::delete('/dogs/{dog}', 'DogController@destroy')
-  ->name('dogs.destroy');

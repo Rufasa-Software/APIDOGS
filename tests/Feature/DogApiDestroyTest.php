@@ -19,12 +19,16 @@ class DogApiDestroyTest extends TestCase
      */
     public function test_api_destroy_dogs()
     {   //Given
-        $dogs = Dog::factory()->count(2)->destroy();
+        $dogs = Dog::factory()->count(2)->create();
+        
         //When
-        $response = $this->json('GET', '/api/dogs');
+        $response = $this->deleteJson('/api/dogs/2');
+        
         //Then
-        $response->assertStatus(200)
-            ->assertJsonCount(2)
-            ->assertExactJson($dogs->toArray());
+        $response->assertStatus(200);
+       
+        
+
+            
     }
 }
