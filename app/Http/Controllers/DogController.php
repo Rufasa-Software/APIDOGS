@@ -15,8 +15,7 @@ class DogController extends Controller
     public function index()
     {
         $dogs = Dog::all();
-        dd($dogs);
-        return response()->json($dogs, 200);
+              return response()->json($dogs, 200);
     }
 
     /**

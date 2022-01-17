@@ -22,7 +22,7 @@ class DogApiDestroyTest extends TestCase
         $dogs = Dog::factory()->count(2)->create();
         
         //When
-        $response = $this->deleteJson('/api/dogs/2');
+        $response = $this->deleteJson('/api/dogs/{id}');
         
         //Then
         $response->assertStatus(200);
