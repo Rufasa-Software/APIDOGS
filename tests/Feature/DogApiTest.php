@@ -45,7 +45,7 @@ class DogApiTest extends TestCase
         
         $data = [
             'name' => 'Snoopy',
-            'image' => 'hola'
+            'image' => 'https://google.com'
         ];
 
         $response = $this->postJson('/api/dogs',$data);
